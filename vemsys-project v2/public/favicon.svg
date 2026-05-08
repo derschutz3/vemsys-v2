@@ -1,0 +1,36 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="16" fill="#FFFFFF" />
+  <g fill="none" stroke="#0A3CFF" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 14 L25 52 L32 44 L39 52 L52 14" stroke-width="6.5" />
+    <path d="M16 14 L29 52" stroke-width="3" opacity="0.55" />
+    <path d="M48 14 L35 52" stroke-width="3" opacity="0.55" />
+
+    <path d="M18 22 H26" stroke-width="3.5" />
+    <path d="M18 22 H14" stroke-width="2.5" />
+    <path d="M14 22 V26" stroke-width="2.5" />
+
+    <path d="M46 22 H38" stroke-width="3.5" />
+    <path d="M46 22 H50" stroke-width="2.5" />
+    <path d="M50 22 V26" stroke-width="2.5" />
+
+    <path d="M23 32 H30" stroke-width="3.5" />
+    <path d="M23 32 H19" stroke-width="2.5" />
+    <path d="M19 32 V36" stroke-width="2.5" />
+
+    <path d="M41 32 H34" stroke-width="3.5" />
+    <path d="M41 32 H45" stroke-width="2.5" />
+    <path d="M45 32 V36" stroke-width="2.5" />
+
+    <path d="M32 22 V34" stroke-width="2.5" opacity="0.65" />
+    <path d="M32 28 H36" stroke-width="2.5" opacity="0.65" />
+    <path d="M36 28 V32" stroke-width="2.5" opacity="0.65" />
+  </g>
+  <g fill="#0B1220">
+    <circle cx="14" cy="22" r="2.4" />
+    <circle cx="50" cy="22" r="2.4" />
+    <circle cx="19" cy="32" r="2.4" />
+    <circle cx="45" cy="32" r="2.4" />
+    <circle cx="32" cy="22" r="2.0" opacity="0.8" />
+    <circle cx="36" cy="28" r="2.0" opacity="0.8" />
+  </g>
+</svg>
