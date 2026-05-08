@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils"
 import { siteContent } from "@/content/siteContent"
-import { LogoMark } from "@/components/landing/Logo"
 import { Menu, X } from "lucide-react"
 import { useEffect, useMemo, useState } from "react"
 
@@ -70,8 +69,12 @@ export function Header({ onCta }: { onCta: () => void }) {
               className="group inline-flex items-center gap-3"
               aria-label="Voltar ao topo"
             >
-              <span className="relative inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-950 text-white shadow-[0_14px_40px_rgba(0,80,255,0.25)]">
-                <LogoMark className="h-7 w-7 text-white" />
+              <span className="relative inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-[0_14px_40px_rgba(0,80,255,0.25)]">
+                <img
+                  src="/logo.png"
+                  alt={siteContent.brand.name}
+                  className="h-7 w-7 object-contain"
+                />
               </span>
               <span className="font-display text-xl tracking-tight text-slate-950">
                 {siteContent.brand.name}
