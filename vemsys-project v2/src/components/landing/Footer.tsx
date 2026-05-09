@@ -44,13 +44,9 @@ export function Footer() {
 
           <div className="mt-8 flex flex-col gap-2 border-t border-slate-200 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
             <div>© {new Date().getFullYear()} {siteContent.brand.name}. Todos os direitos reservados.</div>
-            <div className="text-slate-400">
-              Cores: branco + azul. Motion: respeita preferências do sistema.
-            </div>
           </div>
         </div>
       </div>
     </footer>
   )
 }
-
