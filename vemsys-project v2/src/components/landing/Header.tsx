@@ -69,11 +69,11 @@ export function Header({ onCta }: { onCta: () => void }) {
               className="group inline-flex items-center gap-3"
               aria-label="Voltar ao topo"
             >
-              <span className="relative inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-[0_14px_40px_rgba(0,80,255,0.25)]">
+              <span className="relative inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-white shadow-[0_14px_40px_rgba(0,80,255,0.25)]">
                 <img
                   src="/logo.png"
                   alt={siteContent.brand.name}
-                  className="h-7 w-7 object-contain"
+                  className="h-full w-full object-contain"
                 />
               </span>
               <span className="font-display text-xl tracking-tight text-slate-950">
