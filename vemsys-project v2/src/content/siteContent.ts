@@ -24,7 +24,7 @@ export type FaqItem = {
 
 export const siteContent = {
   brand: {
-    name: "vemsys",
+    name: "Vemsys",
     tagline: "Tecnologia que vira resultado.",
   },
   hero: {
