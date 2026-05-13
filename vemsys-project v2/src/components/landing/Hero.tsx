@@ -1,6 +1,5 @@
 import { siteContent } from "@/content/siteContent"
 import { ArrowRight, Sparkles } from "lucide-react"
-import { HeroBackdropCanvas } from "@/components/landing/HeroBackdropCanvas"
 import { Reveal } from "@/components/landing/Reveal"
 
 export function Hero({
@@ -14,14 +13,7 @@ export function Hero({
     <section id="topo" className="relative overflow-hidden pt-32 sm:pt-36">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-white" />
-        <div className="absolute -inset-20 opacity-[0.65] blur-3xl">
-          <div className="mesh-bg h-full w-full" />
-        </div>
-        <div className="absolute inset-0 opacity-[0.85]">
-          <HeroBackdropCanvas />
-        </div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_35%_20%,rgba(0,120,255,0.18),transparent_55%),radial-gradient(circle_at_70%_55%,rgba(0,40,140,0.10),transparent_60%)]" />
-        <div className="absolute inset-0 noise-overlay opacity-[0.5]" />
+        <div className="absolute -inset-32 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.45),transparent_55%),radial-gradient(circle_at_75%_60%,rgba(29,78,216,0.30),transparent_60%)] blur-3xl" />
       </div>
 
       <div className="relative mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8">
@@ -40,14 +32,12 @@ export function Hero({
             </Reveal>
 
             <Reveal delayMs={120}>
-              <h1 className="mt-7 font-display text-4xl leading-[1.02] tracking-tight text-slate-950 sm:text-6xl">
+              <h1 className="mt-7 font-display text-5xl font-extrabold leading-[0.98] tracking-tight text-slate-950 sm:text-7xl">
                 <span className="block">{siteContent.hero.headline}</span>
-                <span className="mt-3 block text-[color:var(--accent-2)]">
-                  <span className="glow-text">Design</span> que chama atenção.
-                  <span className="ml-2 inline-block align-middle text-slate-700">
-                    <span className="kinetic-underline">Código</span> que sustenta.
-                  </span>
+                <span className="mt-4 block text-[color:var(--accent)]">
+                  Design que chama atenção.
                 </span>
+                <span className="block text-slate-800">Código que sustenta.</span>
               </h1>
             </Reveal>
 
@@ -62,7 +52,7 @@ export function Hero({
                 <button
                   type="button"
                   onClick={onPrimaryCta}
-                  className="magnetic inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-950 px-5 py-3 text-sm font-bold text-white shadow-[0_30px_90px_rgba(0,80,255,0.35)] transition hover:shadow-[0_40px_120px_rgba(0,80,255,0.45)]"
+                  className="magnetic inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white shadow-[0_30px_90px_rgba(0,80,255,0.35)] transition hover:shadow-[0_40px_120px_rgba(0,80,255,0.45)]"
                 >
                   {siteContent.hero.primaryCta}
                   <ArrowRight className="h-4 w-4" />
@@ -71,11 +61,11 @@ export function Hero({
                 <button
                   type="button"
                   onClick={onSecondaryCta}
-                  className="magnetic inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white/70 px-5 py-3 text-sm font-extrabold text-slate-900 backdrop-blur transition hover:bg-white"
+                  className="magnetic inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white/70 px-6 py-3 text-sm font-semibold text-slate-900 backdrop-blur transition hover:bg-white"
                 >
                   {siteContent.hero.secondaryCta}
-                  <span className="pill-scan inline-flex h-5 w-5 items-center justify-center rounded-full bg-[color:var(--accent)] text-white">
-                    <span className="block h-2 w-2 rounded-full bg-white" />
+                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-[color:var(--accent)]">
+                    <span className="block h-2 w-2 rounded-full bg-white" aria-hidden="true" />
                   </span>
                 </button>
               </div>
@@ -114,7 +104,7 @@ export function Hero({
                   />
                   <Metric
                     label="Rotinas automatizadas"
-                    value="menos atrito"
+                    value="menosatrito"
                     hint="Processos repetitivos viram fluxo"
                   />
                   <Metric
@@ -162,4 +152,3 @@ function Metric({ label, value, hint }: { label: string; value: string; hint: st
     </div>
   )
 }
-
