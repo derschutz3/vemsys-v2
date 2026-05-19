@@ -84,13 +84,13 @@ export function Cases() {
             onClick={() => setSelected(null)}
           />
 
-          <div className="relative w-full max-w-3xl overflow-hidden rounded-[2.5rem] border border-white/10 bg-[linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] shadow-[0_50px_140px_rgba(0,0,0,0.38)]">
+          <div className="relative flex w-full max-w-3xl max-h-[calc(100dvh-2rem)] flex-col overflow-hidden rounded-[2.5rem] border border-white/10 bg-[linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] shadow-[0_50px_140px_rgba(0,0,0,0.38)]">
             
             {/* Glow */}
             <div className="absolute -right-32 -top-32 h-80 w-80 rounded-full bg-blue-500/10 blur-3xl" />
 
             {/* Header */}
-            <div className="relative flex items-start justify-between gap-4 border-b border-slate-200/80 p-6 sm:p-8">
+            <div className="relative flex shrink-0 items-start justify-between gap-4 border-b border-slate-200/80 p-6 sm:p-8">
               <div>
                 <div className="text-[11px] font-bold uppercase tracking-[0.24em] text-blue-600">
                   {selected.tag}
@@ -112,7 +112,7 @@ export function Cases() {
             </div>
 
             {/* Content */}
-            <div className="relative p-6 sm:p-8">
+            <div className="relative flex-1 overscroll-contain overflow-y-auto p-6 sm:p-8">
               <div className="rounded-[2rem] bg-[linear-gradient(180deg,#050816_0%,#071226_100%)] p-6 text-white shadow-[0_24px_80px_rgba(2,8,24,0.30)]">
                 <div className="text-[11px] font-bold uppercase tracking-[0.24em] text-blue-300">
                   Impacto gerado
