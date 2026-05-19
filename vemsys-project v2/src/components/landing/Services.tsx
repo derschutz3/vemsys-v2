@@ -9,48 +9,42 @@ export function Services() {
   return (
     <Section
       id="servicos"
-      className="bg-slate-50/70 py-16 sm:py-20"
+      eyebrow="O QUE FAZEMOS"
+      title="Serviços para construir, sustentar e acelerar"
+      className="py-16 sm:py-20"
     >
-      <div className="mb-10 sm:mb-14">
-        <div className="flex items-center gap-2 text-xs font-semibold tracking-[0.22em] text-[color:var(--accent)]">
-          <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--accent)]" />
-          <span>O QUE FAZEMOS</span>
-        </div>
-        <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight text-slate-900 sm:text-5xl">
-          Serviços para construir, sustentar e acelerar
-        </h2>
-      </div>
-
       <div className="grid gap-6 md:grid-cols-2">
         {siteContent.services.map((s, idx) => {
           const Icon = icons[idx] ?? Code2
+
           return (
             <Reveal key={s.title} delayMs={80 + idx * 70}>
-              <div className="group relative overflow-hidden rounded-[2.25rem] bg-slate-950 p-7 shadow-[0_30px_80px_rgba(2,20,60,0.25)]">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_25%,rgba(59,130,246,0.38),transparent_55%),radial-gradient(circle_at_80%_70%,rgba(29,78,216,0.25),transparent_60%)] opacity-90" />
-                <div className="relative">
-                  <div className="flex items-center gap-4">
-                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[color:var(--accent)] text-white shadow-[0_14px_40px_rgba(0,80,255,0.35)]">
-                      <Icon className="h-6 w-6" />
-                    </span>
-                    <h3 className="font-display text-2xl font-extrabold tracking-tight text-white">
-                      {s.title}
-                    </h3>
+              <div className="group relative h-full overflow-hidden rounded-[2rem] border border-slate-800/80 bg-[linear-gradient(180deg,#050816_0%,#071226_100%)] p-8 shadow-[0_24px_80px_rgba(0,0,0,0.32)] transition duration-300 before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.14),transparent_58%)] before:opacity-0 before:transition before:duration-500 hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-[0_32px_100px_rgba(37,99,235,0.18)] hover:before:opacity-100">
+                <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.18),transparent_70%)] opacity-70" />
+                <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
+
+                <div className="relative flex items-start gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-blue-600 text-white shadow-[0_14px_35px_rgba(37,99,235,0.28)] transition group-hover:scale-105">
+                    <Icon className="h-5 w-5" />
                   </div>
 
-                  <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-200">
-                    {s.description}
-                  </p>
-
-                  <ul className="mt-6 space-y-2 text-sm text-slate-200">
-                    {s.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-2">
-                        <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[color:var(--accent)]" />
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <h3 className="pt-2 font-display text-[22px] font-bold tracking-tight text-slate-100">
+                    {s.title}
+                  </h3>
                 </div>
+
+                <p className="relative mt-6 max-w-[92%] text-[15px] font-medium leading-relaxed text-slate-300">
+                  {s.description}
+                </p>
+
+                <ul className="relative mt-7 space-y-3 text-sm font-semibold tracking-tight text-slate-200">
+                  {s.bullets.map((b) => (
+                    <li key={b} className="flex items-start gap-3">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </Reveal>
           )

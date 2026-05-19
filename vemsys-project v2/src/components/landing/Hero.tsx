@@ -1,5 +1,6 @@
 import { siteContent } from "@/content/siteContent"
 import { ArrowRight, Sparkles } from "lucide-react"
+import { HeroBackdropCanvas } from "@/components/landing/HeroBackdropCanvas"
 import { Reveal } from "@/components/landing/Reveal"
 
 export function Hero({
@@ -13,7 +14,15 @@ export function Hero({
     <section id="topo" className="relative overflow-hidden pt-32 sm:pt-36">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-white" />
-        <div className="absolute -inset-32 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.45),transparent_55%),radial-gradient(circle_at_75%_60%,rgba(29,78,216,0.30),transparent_60%)] blur-3xl" />
+        <div className="absolute -inset-20 opacity-[0.65] blur-3xl">
+          <div className="mesh-bg h-full w-full" />
+        </div>
+        <div className="absolute inset-0 opacity-[0.85]">
+          <HeroBackdropCanvas />
+        </div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_35%_20%,rgba(0,120,255,0.18),transparent_55%),radial-gradient(circle_at_70%_55%,rgba(0,40,140,0.10),transparent_60%)]" />
+        {/* AJUSTE: Redução de ruído para evitar aspecto pixelado */}
+        <div className="absolute inset-0 noise-overlay opacity-[0.25]" />
       </div>
 
       <div className="relative mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8">
@@ -32,17 +41,19 @@ export function Hero({
             </Reveal>
 
             <Reveal delayMs={120}>
-              <h1 className="mt-7 font-display text-5xl font-extrabold leading-[0.98] tracking-tight text-slate-950 sm:text-7xl">
+              <h1 className="mt-7 font-display text-4xl font-extrabold leading-[0.95] tracking-tight text-slate-950 sm:text-6xl">
                 <span className="block">{siteContent.hero.headline}</span>
-                <span className="mt-4 block text-[color:var(--accent)]">
-                  Design que chama atenção.
+                <span className="mt-3 block text-[color:var(--accent-2)]">
+                  <span className="glow-text">Design</span> que chama atenção.
+                  <span className="ml-2 inline-block align-middle text-slate-700">
+                    <span className="kinetic-underline">Código</span> que sustenta.
+                  </span>
                 </span>
-                <span className="block text-slate-800">Código que sustenta.</span>
               </h1>
             </Reveal>
 
             <Reveal delayMs={200}>
-              <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate-700 sm:text-lg">
+              <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate-700 sm:text-lg tracking-[-0.02em]">
                 {siteContent.hero.subheadline}
               </p>
             </Reveal>
@@ -52,7 +63,7 @@ export function Hero({
                 <button
                   type="button"
                   onClick={onPrimaryCta}
-                  className="magnetic inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white shadow-[0_30px_90px_rgba(0,80,255,0.35)] transition hover:shadow-[0_40px_120px_rgba(0,80,255,0.45)]"
+                  className="magnetic inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-950 px-5 py-3 text-sm font-bold text-white shadow-[0_30px_90px_rgba(0,80,255,0.35)] transition hover:shadow-[0_40px_120px_rgba(0,80,255,0.45)]"
                 >
                   {siteContent.hero.primaryCta}
                   <ArrowRight className="h-4 w-4" />
@@ -61,26 +72,13 @@ export function Hero({
                 <button
                   type="button"
                   onClick={onSecondaryCta}
-                  className="magnetic inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white/70 px-6 py-3 text-sm font-semibold text-slate-900 backdrop-blur transition hover:bg-white"
+                  className="magnetic inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white/70 px-5 py-3 text-sm font-extrabold text-slate-900 backdrop-blur transition hover:bg-white"
                 >
                   {siteContent.hero.secondaryCta}
-                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-[color:var(--accent)]">
-                    <span className="block h-2 w-2 rounded-full bg-white" aria-hidden="true" />
+                  <span className="pill-scan inline-flex h-5 w-5 items-center justify-center rounded-full bg-[color:var(--accent)] text-white">
+                    <span className="block h-2 w-2 rounded-full bg-white" />
                   </span>
                 </button>
-              </div>
-            </Reveal>
-
-            <Reveal delayMs={340}>
-              <div className="mt-8 flex flex-wrap gap-2">
-                {siteContent.hero.proof.map((p) => (
-                  <span
-                    key={p}
-                    className="rounded-full border border-slate-200 bg-white/65 px-3 py-2 text-xs font-semibold text-slate-700 backdrop-blur"
-                  >
-                    {p}
-                  </span>
-                ))}
               </div>
             </Reveal>
           </div>
@@ -90,7 +88,8 @@ export function Hero({
               <div className="absolute -inset-6 rounded-[2.5rem] bg-[radial-gradient(circle_at_30%_25%,rgba(0,120,255,0.35),transparent_60%),radial-gradient(circle_at_80%_55%,rgba(0,40,140,0.22),transparent_55%)] blur-2xl" />
               <div className="relative overflow-hidden rounded-[2.25rem] border border-white/40 bg-white/60 p-6 shadow-[0_24px_80px_rgba(2,20,60,0.18)] backdrop-blur">
                 <div className="flex items-center justify-between">
-                  <div className="text-xs font-semibold tracking-[0.22em] text-slate-500">
+                  {/* AJUSTE: Label com maior peso e contraste */}
+                  <div className="text-[11px] font-extrabold uppercase tracking-[0.28em] text-white/90">
                     SISTEMA EM TEMPO REAL
                   </div>
                   <div className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_0_6px_rgba(16,185,129,0.20)]" />
@@ -104,7 +103,7 @@ export function Hero({
                   />
                   <Metric
                     label="Rotinas automatizadas"
-                    value="menosatrito"
+                    value="menos atrito"
                     hint="Processos repetitivos viram fluxo"
                   />
                   <Metric
@@ -114,11 +113,13 @@ export function Hero({
                   />
                 </div>
 
-                <div className="mt-6 rounded-2xl bg-slate-950 p-4 text-white">
-                  <div className="text-xs font-semibold tracking-[0.2em] text-white/70">
+                {/* AJUSTE: Card escuro com maior destaque e profundidade */}
+                <div className="mt-6 rounded-3xl bg-slate-950 p-5 text-white shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
+                  <div className="text-[10px] font-semibold tracking-[0.22em] text-white/70">
                     PRÓXIMO PASSO
                   </div>
-                  <div className="mt-2 text-lg font-extrabold">
+                  {/* AJUSTE: Tipografia interna Snug/Tight */}
+                  <div className="mt-2 text-xl font-extrabold leading-snug tracking-tight">
                     Transformar o seu “agora” no seu melhor “depois”.
                   </div>
                   <div className="mt-3 text-sm text-white/75">
