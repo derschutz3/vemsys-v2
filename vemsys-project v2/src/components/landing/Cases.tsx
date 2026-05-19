@@ -72,8 +72,8 @@ export function Cases() {
             className="absolute inset-0 bg-slate-950/60 backdrop-blur-sm"
             onClick={() => setSelected(null)}
           />
-          <div className="relative w-full max-w-2xl overflow-hidden rounded-3xl border border-white/15 bg-white shadow-[0_40px_120px_rgba(0,0,0,0.35)]">
-            <div className="flex items-start justify-between gap-4 border-b border-slate-200 p-5 sm:p-6">
+          <div className="relative flex w-full max-w-2xl max-h-[calc(100dvh-2rem)] flex-col overflow-hidden rounded-3xl border border-white/15 bg-white shadow-[0_40px_120px_rgba(0,0,0,0.35)]">
+            <div className="flex shrink-0 items-start justify-between gap-4 border-b border-slate-200 p-5 sm:p-6">
               <div>
                 <div className="text-xs font-semibold tracking-[0.22em] text-slate-500">
                   {selected.tag}
@@ -91,7 +91,7 @@ export function Cases() {
                 <X className="h-5 w-5" />
               </button>
             </div>
-            <div className="p-5 sm:p-6">
+            <div className="flex-1 overscroll-contain overflow-y-auto p-5 sm:p-6">
               <div className="rounded-3xl bg-slate-950 p-5 text-white">
                 <div className="text-xs font-semibold tracking-[0.22em] text-white/70">
                   IMPACTO
@@ -121,4 +121,3 @@ function InfoCard({ title, text }: { title: string; text: string }) {
     </div>
   )
 }
-

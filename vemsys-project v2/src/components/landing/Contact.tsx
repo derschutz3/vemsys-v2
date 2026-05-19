@@ -108,7 +108,7 @@ export function Contact() {
 
                 <a
                   href={`mailto:${siteContent.contact.email}`}
-                  className="magnetic flex items-center justify-between gap-4 rounded-3xl border border-white/15 bg-white/5 px-5 py-4 text-white backdrop-blur transition hover:bg-white/8"
+                  className="magnetic flex flex-col items-start justify-between gap-3 rounded-3xl border border-white/15 bg-white/5 px-5 py-4 text-white backdrop-blur transition hover:bg-white/8 sm:flex-row sm:items-center"
                 >
                   <div className="flex items-center gap-3">
                     <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-white">
@@ -119,7 +119,7 @@ export function Contact() {
                       <div className="text-sm text-white/70">{siteContent.contact.email}</div>
                     </div>
                   </div>
-                  <span className="text-xs font-semibold tracking-[0.18em] text-white/70">
+                  <span className="w-full break-words text-xs font-semibold tracking-[0.18em] text-white/70 sm:w-auto">
                     {siteContent.contact.availability}
                   </span>
                 </a>
